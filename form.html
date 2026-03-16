@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume Form</title>
+    </head>
+
+    <body>
+
+        <h2>Fill Your Resume Details</h2>
+        <form action ="/generate_resume" method="post">
+
+            <h3>Personal Information</h3>
+            <label>Full Name</label><br>
+            <input type="text" name="name"><br><br>
+            <label>Email</label>
+            <input type="email" name="email"><br><br>
+            <label>Phone</label><br>
+            <input type="text" name="phone"><br><br>
+            <label>Address</label><br>
+            <input type="text" name="address"><br><br>
+
+            <h3>Education</h3>
+            <label>Degree</label><br>
+            <input type="text" name="degree"><br><br>
+            <label>College</label><br>
+            <input type="text" name="college"><br><br>
+            <label>Year</label>
+            <input type="text" name="year"><br><br>
+
+            <h3>Skills</h3>
+            <label>Skills</label><br>
+            <input type="text" name="skills"><br><br>
+
+            <h3>Projects</h3>
+            <textarea name="projects" rows="4" cols="40"></textarea><br><br>
+
+            <h3>Experience</h3>
+            <textarea name="experience" rows="4" cols="40"></textarea><br><br>
+
+            <h3>Select Resume Template</h3>
+
+            <select name="template">
+                <option value="classic">Classic</option>
+                <option value="modern">Modern</option>
+                <option value="professional">Professional</option>
+            </select>
+            <br><br>
+
+            <button type-"submit">Genearate Resume</button>

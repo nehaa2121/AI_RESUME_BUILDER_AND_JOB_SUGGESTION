@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Resume preview</title>
+        <style>
+            body {
+                font-family: Arial;
+                margin: 40px;
+            }
+            h1 {
+                color: #333;
+            }
+
+            .section {
+                margin-top:20px;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1>{{name}}</h1>
+        <p>
+            <strong>Email:</strong> {{email}} <br>
+            <strong>Phone:</strong> {{phone}} <br>
+            <strong>Address:</strong> {{address}}
+        </p>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p>{{degree}} - {{college}} ({{year}})</p>
+        </div>
+
+        <div class="section">
+            <h2>Skills</h2>
+            <p>{{skills}}</p>
+        </div>
+
+        <div class="section">
+            <h2>Projects</h2>
+            <p>{{projects}}</p>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <p>{{experience}}</p>
+        </div>
+        
+        <h2>Suggested Jobs</h2>
+        <ul>
+            {% for job in jobs %}
+            <li>{{ job }}</li>
+            {% endfor %}
+        </ul>
+
+        <h2>Job Match Analysis</h2>
+
+        {% for item in analysis %}
+
+        <h3>{{item.job}}</h3>
+
+        <p>Match Percentage: {{item.match}}%</p>
+
+        <p>Missing Skills:</p>
+
+        <ul>
+            {% for skill in item.missing %}
+            <li>{{skill}}</li>
+            {% endfor %}
+        </ul>
+        
+        {% endfor %}
+
+        {% if template == "classic" %}
+        <body style="font-family: Arial; margin:40px;">
+
+        {% elif template == "modern" %}
+        <body style="font-family: Verdana; margin:40px; background-color:#f4f4f4;">
+         
+        {% elif template == "professional" %}
+        <body style="font-family: Times New Roman; margin:40px; color:#333;">
+        
+        {% endif %}    
+
+        <h2>AI Resume Improvement Suggestions</h2>
+
+        <ul>
+            {% for s in suggestions %}
+            <li>{{s}}</li>
+            {% endfor %}
+        </ul>
+
+        <a href="/download">
+            <button>Download Resume PDF</button>
+        </a>
+    </body>
+    </html>
